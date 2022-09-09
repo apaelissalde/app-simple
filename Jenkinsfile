@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        def mvnHome = tool 'M3'
+        maven 'maven3'
     }
     options {
         buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
