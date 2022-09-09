@@ -30,7 +30,7 @@ pipeline {
                             nexusUrl: 'localhost:8081', 
                             nexusVersion: 'nexus3', 
                             protocol: 'http', 
-                            repository: 'http://localhost:8081/repository/app-init/', 
+                            repository: 'app-init/', 
                             version: '3.0.0'
             }
         }
