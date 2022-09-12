@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven3'
+        maven '3.8.6'
     }
     options {
         buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
@@ -9,8 +9,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-                 bat script: 'mvn clean package'
-                 archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
+                echo 'Hello World'
             }
         }
         stage('Upload War To Nexus'){
@@ -30,10 +29,14 @@ pipeline {
                             nexusUrl: 'localhost:8081', 
                             nexusVersion: 'nexus3', 
                             protocol: 'http', 
-                            repository: 'http://localhost:8081/repository/app-init/', 
+                            repository: 'app-init', 
                             version: '3.0.0'
             }
         }
     }
 }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 26bf686236c213236338ae6119898ddcfb5e6294
